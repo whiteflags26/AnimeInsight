@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AnimeInsight.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AnimeInsight.Controllers
 {
+    [Authorize]
     public class AnimesController : Controller
     {
         private readonly ApplicationDbContext _context;

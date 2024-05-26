@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&family=Hina+Mincho&family=Honk&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
     <link href="https://fonts.cdnfonts.com/css/impact" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/osake" rel="stylesheet">
 
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AnimeInsight.styles.css" asp-append-version="true" />
@@ -37,16 +38,24 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item"><a class="nav-link disabled">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a></li>
+
                         <li class="nav-item" style="border-left">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">| &nbsp;&nbsp;&nbsp;&nbsp; <i class="bi bi-house-fill"></i>Home &nbsp;&nbsp;&nbsp;&nbsp; |</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-fill"></i> Home</a>
                         </li>
+
+                        <li class="nav-item"><a class="nav-link disabled">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a></li>
+
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Animes" asp-action="Index"><i class="bi bi-flower3"></i>Anime &nbsp;&nbsp;&nbsp;&nbsp; |</a>
+                            <a class="nav-link" asp-area="" asp-controller="Animes" asp-action="Index"><i class="bi bi-flower3"></i> Anime</a>
                         </li>
+
+                        <li class="nav-item"><a class="nav-link disabled">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a></li>
+
                     </ul>
                     <div class="d-flex align-items-center">
                         <img src="~/cowboy.gif" alt="GIF" style="height: 120px; width: auto; margin-right: 40px;" />
-                        @* <partial name="_LoginPartial" /> *@
+                        <partial name="_LoginPartial" />
                     </div>
                 </div>
             </div>
