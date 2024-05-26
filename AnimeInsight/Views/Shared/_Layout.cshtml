@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AnimeInsight</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Syncfusion ASP.NET Core controls styles -->
+    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/25.2.3/bootstrap5.css" />
+    <!-- Syncfusion ASP.NET Core controls scripts -->
+    <script src="https://cdn.syncfusion.com/ej2/25.2.3/dist/ej2.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&family=Hina+Mincho&family=Honk&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.cdnfonts.com/css/impact" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AnimeInsight.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-5" data-bs-theme="primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="font-family:Hina-Minacho;font-size: 45px; margin-right:60px;">
+                    <img src="~/animeInsightLogo.png" alt="Site Logo" style="height: 90px; width: auto;" /><b>AnimeInsight</b>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item" style="border-left">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">| &nbsp;&nbsp;&nbsp;&nbsp; <i class="bi bi-house-fill"></i>Home &nbsp;&nbsp;&nbsp;&nbsp; |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Animes" asp-action="Index"><i class="bi bi-flower3"></i>Anime &nbsp;&nbsp;&nbsp;&nbsp; |</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <img src="~/cowboy.gif" alt="GIF" style="height: 120px; width: auto; margin-right: 40px;" />
+                        @* <partial name="_LoginPartial" /> *@
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top bg-white footer text-muted">
+        <div class="container d-flex justify-content-between text-decoration-none text-dark">
+            <div>
+                <a class="link text-decoration-none" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="bi bi-shield-fill-check"></i>&nbsp;Privacy</a>
+            </div>
+            <div>
+                <i class="bi bi-gear-wide-connected"></i> TeamExcel, &nbsp;&nbsp; 2024
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <!-- Syncfusion ASP.NET Core Script Manager -->
+    <ejs-scripts></ejs-scripts>
+</body>
+</html>

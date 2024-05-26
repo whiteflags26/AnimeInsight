@@ -1,0 +1,44 @@
+﻿@model AnimeInsight.Models.Anime
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <h1>Edit Anime</h1>
+            <hr />
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="mb-3">
+                    <ejs-textbox id="title" placeholder="Title" ejs-for="Title" floatLabelType="Always"></ejs-textbox>
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <ejs-textbox id="description" placeholder="Description" ejs-for="Description" floatLabelType="Always"></ejs-textbox>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <ejs-numerictextbox id="duration" placeholder="Duration" ejs-for="Duration" floatLabelType="Always" min="0" format="n0"></ejs-numerictextbox>
+                    <span asp-validation-for="Duration" class="text-danger fs-6"></span>
+                </div>
+                <div class="mb-3">
+                    <ejs-datepicker id="releaseDate" placeholder="Release Date" ejs-for="ReleaseDate" floatLabelType="Always" format="MMM-dd-yy"></ejs-datepicker>
+                    <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value="Save" class="btn btn-primary" style="margin-right:5px;" />
+                    <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Index", "Animes")'">Back to List</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
