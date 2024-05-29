@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Syncfusion ASP.NET Core controls styles -->
-    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/25.2.3/bootstrap5.css" />
+    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/25.2.3/bootstrap.css" />
     <!-- Syncfusion ASP.NET Core controls scripts -->
     <script src="https://cdn.syncfusion.com/ej2/25.2.3/dist/ej2.min.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&family=Hina+Mincho&family=Honk&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&family=Hina+Mincho&family=Julee&family=Neucha&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Salsa&display=swap" rel="stylesheet">
 
     <link href="https://fonts.cdnfonts.com/css/impact" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/osake" rel="stylesheet">
+
 
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AnimeInsight.styles.css" asp-append-version="true" />
@@ -28,8 +29,8 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-5" data-bs-theme="primary">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="font-family:Hina-Minacho;font-size: 45px; margin-right:60px;">
-                    <img src="~/animeInsightLogo.png" alt="Site Logo" style="height: 90px; width: auto;" /><b>AnimeInsight</b>
+                <a class="navbar-brand" asp-area="" asp-controller="Animes" asp-action="Index" style="font-family:Impact;font-size: 45px; margin-right:60px; border-width: 0px; border-style:solid;padding-right:20px;padding-left:20px;">
+                    <img src="~/animeInsightLogo.png" alt="Site Logo" style="height: 90px; width: auto;" />&nbsp;AnimeInsight
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -41,21 +42,21 @@
                         <li class="nav-item"><a class="nav-link disabled">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a></li>
 
                         <li class="nav-item" style="border-left">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-fill"></i> Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><b><i class="bi bi-house-fill"></i> Home</b></a>
                         </li>
 
                         <li class="nav-item"><a class="nav-link disabled">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a></li>
 
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Animes" asp-action="Index"><i class="bi bi-flower3"></i> Anime</a>
+                            <a class="nav-link" asp-area="" asp-controller="Animes" asp-action="Index"><b><i class="bi bi-flower3"></i> Anime</b></a>
                         </li>
 
                         <li class="nav-item"><a class="nav-link disabled">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a></li>
 
                     </ul>
                     <div class="d-flex align-items-center">
-                        <img src="~/cowboy.gif" alt="GIF" style="height: 120px; width: auto; margin-right: 40px;" />
                         <partial name="_LoginPartial" />
+                        <img src="~/cowboy.gif" alt="GIF" style="height: 105px; width: auto; margin-right: 0px;" />
                     </div>
                 </div>
             </div>
@@ -68,13 +69,13 @@
         </main>
     </div>
 
-    <footer class="border-top bg-white footer text-muted">
-        <div class="container d-flex justify-content-between text-decoration-none text-dark">
+    <footer class="border-top bg-secondary footer">
+        <div class="container d-flex justify-content-between text-decoration-none text-dark" style="font-weight:bold;">
             <div>
                 <a class="link text-decoration-none" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="bi bi-shield-fill-check"></i>&nbsp;Privacy</a>
             </div>
             <div>
-                <i class="bi bi-gear-wide-connected"></i> TeamExcel, &nbsp;&nbsp; 2024
+                <span style="color:#20c997;"><i class="bi bi-gear-wide-connected"></i> TeamExcel - 2024</span>
             </div>
         </div>
     </footer>

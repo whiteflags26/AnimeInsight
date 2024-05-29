@@ -4,39 +4,49 @@
     ViewData["Title"] = "Details";
 }
 
-<div class="container">
+<div class="container mt-4">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h1>Anime Details</h1>
-            <hr />
-            <dl class="row">
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.Title)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.Title)
-                </dd>
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.Description)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.Description)
-                </dd>
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.Duration)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.Duration)
-                </dd>
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.ReleaseDate)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.ReleaseDate)
-                </dd>
-            </dl>
-            <button type="button" class="btn btn-primary" style="margin-right:5px;" onclick="location.href='@Url.Action("Edit", "Animes", new { id = Model?.Id })'">Edit</button>
-            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Index", "Animes")'">Back to List</button>
+        <div class="col-md-5">
+            <div class="card" style="border-width: 1px; border-style: solid; border-color: dimgray;">
+                <img src="~/placeholder.png" class="card-img-top img-fluid" style="max-width: 150px; margin: auto; padding-top: 20px;" alt="Anime Logo">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <button type="button" class="btn btn-outline-dark" onclick="location.href='@Url.Action("Edit", "Animes", new { id = Model?.Id })'"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-outline-primary" onclick="location.href='@Url.Action("Delete", "Animes", new { id = Model?.Id })'"><i class="bi bi-trash3-fill"></i></button>
+                    </div>
+                    <h1 class="card-title text-center"><b>@Html.DisplayFor(model => model.Title)</b></h1>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-3" style="color:#4a4a49;">
+                            <b>@Html.DisplayNameFor(model => model.Title)</b>
+                        </dt>
+                        <dd class="col-sm-9" style="color:#4a4a49;">
+                            @Html.DisplayFor(model => model.Title)
+                        </dd>
+                       <dt class="col-sm-3" style="color: #4a4a49;">
+                        <b>@Html.DisplayNameFor(model => model.Description)</b>
+                        </dt>
+                        <dd class="col-sm-9" style="color: #4a4a49;">
+                        @Html.Raw(Model.Description)
+                        </dd>
+                        <dt class="col-sm-3" style="color: #4a4a49;">
+                        <b>@Html.DisplayNameFor(model => model.Duration)</b>
+                        </dt>
+                        <dd class="col-sm-9" style="color: #4a4a49;">
+                        @Html.DisplayFor(model => model.Duration)
+                        </dd>
+                        <dt class="col-sm-3" style="color: #4a4a49;">
+                        <b>@Html.DisplayNameFor(model => model.ReleaseDate)</b>
+                        </dt>
+                        <dd class="col-sm-9" style="color: #4a4a49;">
+                        @Html.DisplayFor(model => model.ReleaseDate)
+                        </dd>
+                    </dl>
+                    <div class="text-center mt-3">
+                        <button type="button" class="btn btn-outline-dark" onclick="location.href='@Url.Action("Index", "Animes")'"><b>Back to List</b</button>
+                    </div>
+                </div>
+            </div>
         </div>
-     </div>
+    </div>
 </div>

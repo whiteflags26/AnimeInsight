@@ -23,8 +23,10 @@ namespace AnimeInsight.Controllers
         // GET: Animes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Animes.ToListAsync());
+            var sortedAnimes = await _context.Animes.OrderBy(x=>x.Id).ToListAsync();
+            return View(sortedAnimes);
         }
+
 
         // GET: Animes/Details/5
         public async Task<IActionResult> Details(int? id)

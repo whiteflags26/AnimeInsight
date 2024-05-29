@@ -18,7 +18,8 @@ html {
 }
 
 body {
-    margin-bottom: 60px;
+    margin-bottom: 100px;
+    font-family:Roboto;
 }
 
 /*Calender*/
@@ -45,3 +46,25 @@ body {
     color: #fff;
 }
 /********************/
+
+/*ejs-textbox-style*/
+/* To specify font size and color */
+.e-float-input.e-control-wrapper:not(.e-error) input:valid ~ label.e-float-text, .e-float-input.e-control-wrapper:not(.e-error) input ~ label.e-label-top.e-float-text {
+    /*font-weight:bold;*/
+    font-size:14px;
+}
+
+.custom-textbox-multiline {
+    height: 100px; /* Set your desired initial height here */
+}
+
+#numbercount {
+    margin-left: 465px;
+    color: #d9230f;
+    font-size:12px;
+}
+
+.custom-textbox {
+    height: 50px;/* Set your desired initial height here */
+}
+

@@ -1,55 +1,34 @@
 ﻿@model IEnumerable<AnimeInsight.Models.Anime>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Anime List";
 }
 
-<p>
-    <div>
-        <a class="btn btn-primary" href="Animes/Create">
-            <i class="bi bi-plus-lg"></i> New Anime
-        </a>
+<div class="container mt-4">
+    <p>
+        <div style="margin-bottom:30px;">
+            <a class="btn btn-primary" href="Animes/Create">
+                <i class="bi bi-plus-lg"></i> <b>New Anime</b>
+            </a>
+        </div>
+    </p>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-2 mb-1">
+                <div class="card h-100 text-center" style="border-width: 1px; border-style: solid; border-color: lightgray">
+                    <img src="~/placeholder.png" class="card-img-top img-fluid" alt="Anime Logo" style="height: 150px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="@Url.Action("Details", "Animes", new { id = item.Id })" class="btn btn-outline-primary">
+                                <b>@Html.DisplayFor(modelItem => item.Title)</b>
+                            </a>
+                        </h5>
+                        <p class="card-text" style="color: #5c5c5b;"><b>Duration:</b> @item.Duration mins</p>
+                        <p class="card-text" style="color: #5c5c5b;"><b>Released:</b> @item.ReleaseDate.ToString("MMM dd, yy")</p>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Duration)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReleaseDate)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Duration)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReleaseDate)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+</div>
