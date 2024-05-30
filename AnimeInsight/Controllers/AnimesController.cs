@@ -57,7 +57,7 @@ namespace AnimeInsight.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,Duration,ReleaseDate")] Anime anime)
+        public async Task<IActionResult> Create([Bind("Id,Title,Type,EpisodeCount,Description,Duration,ReleaseDate")] Anime anime)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace AnimeInsight.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Duration,ReleaseDate")] Anime anime)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Type,EpisodeCount,Description,Duration,ReleaseDate")] Anime anime)
         {
             if (id != anime.Id)
             {

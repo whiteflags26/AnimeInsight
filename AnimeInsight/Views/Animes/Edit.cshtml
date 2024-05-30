@@ -19,6 +19,14 @@
                     <span asp-validation-for="Title" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
+                    <ejs-textbox id="type" placeholder="Type" ejs-for="Type" floatLabelType="Always"></ejs-textbox>
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <ejs-numerictextbox id="episodeCount" placeholder="EpisodeCount" ejs-for="EpisodeCount" floatLabelType="Always" min="1" format="n0"></ejs-numerictextbox>
+                    <span asp-validation-for="EpisodeCount" class="text-danger fs-6"></span>
+                </div>
+                <div class="mb-3">
                     <ejs-textbox id="description" placeholder="Description (Max 2000 characters)" ejs-for="Description" floatLabelType="Always" multiline="true" showClearButton input="inputHandler" cssClass="custom-textbox-multiline"></ejs-textbox>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>

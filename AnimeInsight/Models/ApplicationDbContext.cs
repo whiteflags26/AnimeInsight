@@ -29,5 +29,7 @@ namespace AnimeInsight.Models
         }
 
         public DbSet<Anime> Animes { get; set; }
+        public DbSet<Director> Directors { get; set; }
+        public DbSet<VoiceActor> VoiceActors { get; set; }
     }
 }

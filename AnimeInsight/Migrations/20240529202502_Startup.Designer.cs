@@ -12,8 +12,8 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace AnimeInsight.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240526092637_Added Identity Tables")]
-    partial class AddedIdentityTables
+    [Migration("20240529202502_Startup")]
+    partial class Startup
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,9 +34,12 @@ namespace AnimeInsight.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar2(2000)");
 
                     b.Property<int>("Duration")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<int>("EpisodeCount")
                         .HasColumnType("NUMBER(10)");
 
                     b.Property<DateTime>("ReleaseDate")
@@ -44,11 +47,39 @@ namespace AnimeInsight.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar2(250)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar2(100)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Animes");
+                });
+
+            modelBuilder.Entity("AnimeInsight.Models.Director", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DOB")
+                        .HasColumnType("TIMESTAMP(7)");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar2(50)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar2(250)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Directors");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
